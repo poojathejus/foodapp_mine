@@ -26,7 +26,7 @@ this.cartQuantity = newCart.totalcount
   ngOnInit(): void {
   }
   logout(){
-    console.log("User Logged Out")
+    console.log("User Logged Out !!!")
     this.cartService.clearCart();
     this.userService.logout();
   }
