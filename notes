@@ -1,0 +1,21 @@
+1.Introduction to the course
+2.Install development tools
+3.Create Angular App
+4.Add Header
+    1.Generate Component
+    2.Add Html
+    3.Add Css
+5.List foods    
+    1.Create food model
+    2.Create data.ts
+        1.Add sample foods 
+    3.Add imgaes to assets
+    4.Create food service    
+    5.Create home Component
+        Add ts,html,Css
+6.Search
+    1.add method to food service
+    2.add search route
+    3.show search result in home Component
+    4.generate search Component
+        1. add to home component,add ts,html,Css     
