@@ -55,7 +55,8 @@ export class RegisterPageComponent implements OnInit {
     };
 
     this.userService.register(user).subscribe(_ => {
-      this.router.navigateByUrl(this.returnUrl);
+    //  this.router.navigateByUrl(this.returnUrl);
+    this.router.navigateByUrl('login');
     })
 
     console.log(user.email,user.password)

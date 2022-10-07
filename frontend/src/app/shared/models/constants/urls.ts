@@ -1,3 +1,6 @@
+//single page for holding/managing all constant values and urls(urls are constant too)
+
+//base address-it is shared b/w all apis
 const BASE_URL = 'http://localhost:5000';
 
 export const FOODS_URL = BASE_URL + '/api/foods';

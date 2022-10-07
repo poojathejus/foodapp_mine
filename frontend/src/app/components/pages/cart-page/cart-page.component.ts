@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { UserService } from 'src/app/services/user.service';
 import { Cart } from 'src/app/shared/models/Cart';
 import { CartItem } from 'src/app/shared/models/CartItem';
 
@@ -11,7 +12,7 @@ import { CartItem } from 'src/app/shared/models/CartItem';
 export class CartPageComponent implements OnInit {
 
   cart!:Cart;
-  constructor(private cartService:CartService) {
+  constructor(private cartService:CartService,private userService:UserService) {
     this.cartService.getCartObservable().subscribe((cart)=>{
       this.cart = cart;
     })
@@ -27,4 +28,7 @@ export class CartPageComponent implements OnInit {
 const quantity = parseInt(quantityInString);
 this.cartService.changeQuantity(cartItem.food.id,quantity);
   }
+
+
+
 }

@@ -16,13 +16,17 @@ const USER_KEY = 'User';
 })
 export class UserService {
 
-
   private userSubject = new BehaviorSubject<User>(this.getUserFromLocalStorage());
   public userObservable:Observable<User>;
   constructor(private http:HttpClient,private toastrService:ToastrService,private router:Router) {
     this.userObservable = this.userSubject.asObservable();
 
   }
+
+  public get currentUser():User{
+    return this.userSubject.value;
+  }
+
   login(userLogin:IUserLogin):Observable<User>{
     return this.http.post<User>(USER_LOGIN_URL,userLogin).pipe(
       tap({
@@ -33,6 +37,7 @@ export class UserService {
             `Welcome to Foodmine ${user.name}!`,
             'Login Successful'
           )
+
 
       },
       error: (errorResponse) =>{
@@ -50,7 +55,7 @@ export class UserService {
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
           this.toastrService.success(
-            `Welcome to the Foodmine ${user.name}`,
+            // `Welcome to the Foodmine ${user.name}`,
             'Register Successful'
           )
         },

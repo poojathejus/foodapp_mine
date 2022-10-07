@@ -11,8 +11,10 @@ import { Tag } from '../shared/models/Tags';
 })
 export class FoodService {
 
+  //dependency injection
   constructor(private http:HttpClient) { }
 
+//observable with the type of food array
   getAll():Observable<Food[]>{
     return this.http.get<Food[]>(FOODS_URL);
   }
